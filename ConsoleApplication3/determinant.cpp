@@ -3,8 +3,8 @@
 #include <vector>
 using namespace std;
 
-int** determinant::createarrow() { // create arrow from vector
-	int** mat = 0;
+int** determinant::createarrow() { // create arrow from vector, unnecessary function if we will push arrow.
+ 	int** mat = 0;
 	mat = new int* [size];
 
 	int counter = 0;
