@@ -19,12 +19,12 @@ int** determinant::createarrow() { // create arrow from vector, unnecessary func
 	return mat;
 }
 
-void determinant::substitution(int** matrix, int** temp, int p, int q, int n) { // default substitution 
+void determinant::substitution(int** matrix, int** temp, int p, int c, int n) { // default substitution 
     int i = 0, j = 0;
 
     for (int row = 0; row < n; row++) {
         for (int column = 0; column < n; column++) {
-            if (row != p && column != q) { // copy to temp matrix only unique elements
+            if (row != p && column != c) { // copy to temp matrix only unique elements
                 temp[i][j++] = matrix[row][column];
                 if (j == n - 1) {
                     j = 0;
