@@ -3,7 +3,7 @@
 #include <vector>
 using namespace std;
 
-
+// Slozitost n(size) * n(size) => O(n^2)
 int** determinant::createarrow() { // create arrow from vector, unnecessary function if we will push arrow.
  	int** mat = 0;
 	mat = new int* [size];
@@ -20,7 +20,7 @@ int** determinant::createarrow() { // create arrow from vector, unnecessary func
 	return mat;
 }
 
-
+// Slozitost n * n => O(n^2)
 void determinant::substitution(int** matrix, int** temp, int p, int c, int n) { // default substitution 
     int i = 0, j = 0;
 
@@ -38,7 +38,8 @@ void determinant::substitution(int** matrix, int** temp, int p, int c, int n) { 
     }
 
 }
-
+// Slozitost n => O(n)
+// Plna slozitost algoritmu bude O(n^2) + O(n^2) + O(n) coz = O(n^2)
 int determinant::MatrixDeterminant(int** matrix, int n) {
     if (n == 1) {
         return matrix[0][0];
