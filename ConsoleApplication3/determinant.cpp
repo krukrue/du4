@@ -1,7 +1,8 @@
-﻿#include "determinant.h"
+#include "determinant.h"
 #include <iostream>
 #include <vector>
 using namespace std;
+
 
 int** determinant::createarrow() { // create arrow from vector, unnecessary function if we will push arrow.
  	int** mat = 0;
@@ -19,16 +20,18 @@ int** determinant::createarrow() { // create arrow from vector, unnecessary func
 	return mat;
 }
 
+
 void determinant::substitution(int** matrix, int** temp, int p, int c, int n) { // default substitution 
     int i = 0, j = 0;
 
     for (int row = 0; row < n; row++) {
         for (int column = 0; column < n; column++) {
+
             if (row != p && column != c) { // copy to temp matrix only unique elements
                 temp[i][j++] = matrix[row][column];
-                if (j == n - 1) {
-                    j = 0;
-                    i++;
+                if (j == n - 1) { // if column end
+                    j = 0; 
+                    i++; // increase row
                 }
             }
         }
@@ -45,7 +48,7 @@ int determinant::MatrixDeterminant(int** matrix, int n) {
     }
     int** temp = new int* [size];
     for (int i = 0; i < size; i++) { // create empty arrow with needed size
-        temp[i] = new int[size];
+        temp[i] = new int[size]; // allocate every row 
     }
     int sign = 1;
     int determinant = 0;
